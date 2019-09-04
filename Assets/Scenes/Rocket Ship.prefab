@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1130573653}
   - component: {fileID: 1130573652}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Nose Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,7 +339,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 43084b7ef283c244ab71eae7a664b133, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.76
+  m_Pitch: 0.3
   Loop: 0
   Mute: 0
   Spatialize: 0

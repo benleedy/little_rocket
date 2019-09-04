@@ -7,6 +7,8 @@ public class Rocket : MonoBehaviour
 
     Rigidbody rigidBody;
     AudioSource audioSource;
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float engineThrust = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,32 +20,62 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        Rotate();
+        Thrust();
     }
 
-    private void ProcessInput()
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                //do nothing
+
+                break;
+            case "Fuel":
+                print("Fuel");
+                break;
+            default:
+                //log dead
+                print("Dead");
+                //kill the rocket
+                break;
+        }
+    }
+
+    void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up);
+            rigidBody.AddRelativeForce(Vector3.up * engineThrust);
             if (!audioSource.isPlaying)
             {
-            audioSource.Play();
+                audioSource.Play();
             }
 
         }
-        else if (!Input.GetKey(KeyCode.Space))
+        else
         {
             audioSource.Stop();
         }
+    }
 
+    private void Rotate()
+    {
+        rigidBody.freezeRotation = true;  // take manual control of rotation
+
+
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
+            
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
+
+        rigidBody.freezeRotation = false; // resume physics control of rotation
     }
 }
