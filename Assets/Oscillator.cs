@@ -22,13 +22,21 @@ Vector3 startingPos;
     // Update is called once per frame
     void Update()
     {
-        //todo protect against period is zero
-        float cycles = Time.time / period; // grows continually from 0
+        float cycles;
+        //protect against period is zero
+        if (period > 0 || period < 0)
+        { 
+            cycles = Time.time / period; // grows continually from 0
+        }
+        else
+        {
+            cycles = 0f;
+        }
 
         const float tau = Mathf.PI * 2; // about 6.28
         float rawSinWave = Mathf.Sin(cycles * tau); // goes from -1 to +1
 
-        print(rawSinWave);
+        //print(rawSinWave);
 
         movementFactor = rawSinWave / 2f + 0.5f;
         Vector3 offset = movementFactor * movementVector;
