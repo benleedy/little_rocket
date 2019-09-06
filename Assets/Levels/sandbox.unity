@@ -463,9 +463,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692b3e08c4e38a344b78701189b91368, type: 3}
---- !u!4 &1725782761 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4126996473970701618, guid: cc4e4511fe8b88b4eb31fcec25095d98,
+--- !u!54 &1790965277 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7618096131491513663, guid: cc4e4511fe8b88b4eb31fcec25095d98,
     type: 3}
   m_PrefabInstance: {fileID: 594542858}
   m_PrefabAsset: {fileID: 0}
@@ -487,7 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f9b5bb769eaa64cacfd8859640690b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRocket: {fileID: 1725782761}
+  playerRocketTransform: {fileID: 0}
+  playerRocketRigidbody: {fileID: 1790965277}
+  cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1179080669814556314
 PrefabInstance:
   m_ObjectHideFlags: 0
