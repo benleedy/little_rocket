@@ -29,12 +29,14 @@ public class FollowCam : MonoBehaviour
         }
         //rocketVelocity = Time.deltaTime . . fix this so the camera leads the rocket based on speed
         float differenceFromRocket = playerRocketTransform.position.y - transform.position.y + cameraLead + 4;
-        print(playerRocketRigidbody.velocity.y);
-        
-        if (playerRocketTransform.position.y >= 9f)
+
+        /*if (playerRocketTransform.position.y >= 9f)
         {
             transform.Translate(0, differenceFromRocket, 0);
-        }
+        }*/
+
+        transform.Translate(0, differenceFromRocket, 0);
+
         /*
         else
         {
