@@ -63,6 +63,7 @@ public class Rocket : MonoBehaviour
                     break;
                 case "Finish":
                     StartSuccessSequence();
+                    StabilizeRocket(collision.gameObject.transform);
                     break;
                 case "Checkpoint":
                     //stand the rocket upright
