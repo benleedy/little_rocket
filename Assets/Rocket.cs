@@ -64,12 +64,26 @@ public class Rocket : MonoBehaviour
                 case "Finish":
                     StartSuccessSequence();
                     break;
+                case "Checkpoint":
+                    //stand the rocket upright
+                    StabilizeRocket(collision.gameObject.transform);
+                    break;
                 default:
                     StartDeathSequence();
                     break;
             }
         }
 
+    }
+
+    
+    void StabilizeRocket(Transform pad)
+    {
+        rigidBody.freezeRotation = true;  // take manual control of rotation
+        //transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 3.65), pad.transform.position.z), Quaternion.Euler(new Vector3(0, 0, 0)));
+        transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 1.65f), pad.transform.position.z), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        rigidBody.freezeRotation = false;  // take manual control of rotation
+        rigidBody.velocity = new Vector3(0f,0f,0f);
     }
 
     private void StartSuccessSequence()
@@ -111,6 +125,14 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             ApplyThrust();
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            ApplyThrust();
+        }
+        else if (Input.GetKey(KeyCode.U))
+        {
+            //StabilizeRocket();
         }
         else
         {

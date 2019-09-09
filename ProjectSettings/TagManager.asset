@@ -7,6 +7,7 @@ TagManager:
   - Friendly
   - Unfriendly
   - Fuel
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
