@@ -26,6 +26,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem successParticles;
 
+    //[SerializeField] float MaxVelocity = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,12 @@ public class Rocket : MonoBehaviour
 
             DebugOptions();
         }
+
+        //If I want a speed limit, this is how I would implement it.
+        /*
+        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, MaxVelocity);
+        print(rigidBody.velocity);
+        */
     }
 
     void OnCollisionEnter(Collision collision)
