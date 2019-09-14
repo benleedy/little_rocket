@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ObstacleRotator : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 1f;
+    float rotationSpeed = 1f;
+    private void Awake()
+    {
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotationSpeed = Random.RandomRange(-20f, 20f);
+        print(rotationSpeed);
+
     }
 
     // Update is called once per frame
