@@ -26,9 +26,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem successParticles;
 
-    [SerializeField] float fuelLevel = 1;
-
-    //[SerializeField] float MaxVelocity = 10f;
+    //[SerializeField] float fuelLevel = 1; // This will be used when fuel is re-instituted
+    
 
     // Start is called before the first frame update
     void Start()
@@ -95,14 +94,7 @@ public class Rocket : MonoBehaviour
         transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 1.65f), pad.transform.position.z), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         rigidBody.freezeRotation = false;  // take manual control of rotation
         rigidBody.velocity = new Vector3(0f,0f,0f);
-        if (fuelLevel < 1f)
-        {
-            RefuelRocket();
-        }
-        else if (fuelLevel > 1f)
-        {
-            fuelLevel = 1f;
-        }
+        
     }
 
     private void StartSuccessSequence()
@@ -122,7 +114,6 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(death);
         deathParticles.Play();
         Invoke("LoadFirstLevel", levelLoadDelay);
-        fuelLevel = 1f;
     }
 
     private void LoadNextLevel()
@@ -163,34 +154,19 @@ public class Rocket : MonoBehaviour
 
     private void ApplyThrust()
     {
-        print(fuelLevel);
-        if (fuelLevel > 0f)
-        {
-            fuelLevel = fuelLevel - .002f;
-            rigidBody.AddRelativeForce(Vector3.up * engineThrust * Time.deltaTime);
-        }
-        else
-        {
-            fuelLevel = 0f;
-        }
+        rigidBody.AddRelativeForce(Vector3.up * engineThrust * Time.deltaTime);
 
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(mainEngine);
         }
-        mainEngineParticles.Play();
-    }
 
-    void RefuelRocket()
-    {
-        fuelLevel = fuelLevel + .1f;
+        mainEngineParticles.Play();
     }
 
     private void RespondToRotateInput()
     {
         
-
-
         float rotationThisFrame = rcsThrust * Time.deltaTime;
             
         if (Input.GetKey(KeyCode.A))

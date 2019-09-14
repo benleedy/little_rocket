@@ -837,6 +837,11 @@ PrefabInstance:
       propertyPath: MaxVelocity
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7618096131491513664, guid: cc4e4511fe8b88b4eb31fcec25095d98,
+        type: 3}
+      propertyPath: fuelGauge
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc4e4511fe8b88b4eb31fcec25095d98, type: 3}
 --- !u!1001 &604581782
