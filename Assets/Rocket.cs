@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Rocket : MonoBehaviour
 {
@@ -166,7 +167,17 @@ public class Rocket : MonoBehaviour
 
     private void RespondToRotateInput()
     {
-        
+
+        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+
+        float rotationThisFrame = -xThrow * Time.deltaTime * rcsThrust;
+
+        if (xThrow != 0)
+        {
+            transform.Rotate(Vector3.forward * rotationThisFrame);
+        }
+
+        /*
         float rotationThisFrame = rcsThrust * Time.deltaTime;
             
         if (Input.GetKey(KeyCode.A))
@@ -181,6 +192,7 @@ public class Rocket : MonoBehaviour
             transform.Rotate(-Vector3.forward * rotationThisFrame);
             rigidBody.freezeRotation = false; // resume physics control of rotation
         }
+        */
 
     }
 

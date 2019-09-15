@@ -775,6 +775,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Starting Area
       objectReference: {fileID: 0}
+    - target: {fileID: 7974710555858525232, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Unfriendly
+      objectReference: {fileID: 0}
     - target: {fileID: 4426840822609895623, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
         type: 3}
       propertyPath: m_LocalPosition.x
