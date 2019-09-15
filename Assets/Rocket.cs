@@ -133,7 +133,7 @@ public class Rocket : MonoBehaviour
     }
 
     void RespondToThrustInput()
-    {
+    {        
         if (Input.GetKey(KeyCode.Space))
         {
             ApplyThrust();
@@ -142,9 +142,9 @@ public class Rocket : MonoBehaviour
         {
             ApplyThrust();
         }
-        else if (Input.GetKey(KeyCode.U))
+        else if (CrossPlatformInputManager.GetAxis("Fire1") > 0)
         {
-            //StabilizeRocket();
+            ApplyThrust();
         }
         else
         {
