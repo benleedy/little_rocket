@@ -15,16 +15,12 @@ public class ChunkLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        loadLine++;
-        print(loadLine);
-        if (playerRocket.transform.position.y > loadLine)
-        {
-            LoadChunk();
-        }
+
     }
 
     void LoadChunk()
     {
-        loadLine++;
+        GameObject firstChunk = Resources.Load<GameObject>("Chunks/Asteroids001.prefab");
+        firstChunk.transform.position = new Vector3(0f, 60f, 0f);
     }
 }
