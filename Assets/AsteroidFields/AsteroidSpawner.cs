@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
+
     [SerializeField] GameObject asteroid;
+
+    //public static Vector3 asteroidScale;
+
     // Start is called before the first frame update
     void Start()
     {
+        //asteroidScale = transform.localScale;
         LoadAsteroid();
     }
 
@@ -19,7 +24,9 @@ public class AsteroidSpawner : MonoBehaviour
 
     void LoadAsteroid()
     {
-        Instantiate(asteroid, transform.position, transform.rotation);
+        //asteroidScale = transform.localScale;
+        var newAsteroid = Instantiate(asteroid, transform.position, transform.rotation);
+        newAsteroid.transform.parent = gameObject.transform;
         //var newAsteroid = Instantiate(asteroid, transform.position, transform.rotation);
         //asteroid.transform.localScale = transform.localScale * 5f;
         //print(transform.localScale);

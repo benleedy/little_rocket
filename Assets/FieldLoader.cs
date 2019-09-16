@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkLoader : MonoBehaviour
+public class FieldLoader : MonoBehaviour
 {
     [SerializeField] GameObject asteroidPattern;
     // Start is called before the first frame update
