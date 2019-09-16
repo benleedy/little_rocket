@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkLoader : MonoBehaviour
+public class WallLoader : MonoBehaviour
 {
-    [SerializeField] GameObject asteroidPattern;
+    [SerializeField] GameObject wall;
     // Start is called before the first frame update
     void Start()
     {
-        LoadAsteroids();
+        LoadWall();
     }
 
     // Update is called once per frame
@@ -17,8 +17,8 @@ public class ChunkLoader : MonoBehaviour
 
     }
 
-    void LoadAsteroids()
+    void LoadWall()
     {
-        Instantiate(asteroidPattern, transform.position, transform.rotation);
+        Instantiate(wall, transform.position, transform.rotation);
     }
 }
