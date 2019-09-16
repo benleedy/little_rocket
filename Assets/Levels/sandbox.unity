@@ -178,6 +178,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a03f6864255921a4fa80eb32e65fc3fb, type: 3}
+--- !u!1 &408794898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2384956601372320577, guid: cd35fa4cd042bae458dd8bd598766305,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384956602125803976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &408794900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408794898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e07bddbacd242c4fb0eda29c0f60eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPattern: {fileID: 29481281365936440, guid: 1599316bf57a3ad479437b8590a00af2,
+    type: 3}
 --- !u!1 &418251916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7211056464777452235, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
@@ -683,7 +703,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2384956601757818130, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
 --- !u!1001 &5423999168506803300
 PrefabInstance:

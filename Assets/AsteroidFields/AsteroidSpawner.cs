@@ -20,7 +20,9 @@ public class AsteroidSpawner : MonoBehaviour
     void LoadAsteroid()
     {
         Instantiate(asteroid, transform.position, transform.rotation);
+        //var newAsteroid = Instantiate(asteroid, transform.position, transform.rotation);
         //asteroid.transform.localScale = transform.localScale * 5f;
-        print(transform.localScale);
+        //print(transform.localScale);
+        //newAsteroid.transform.localScale = transform.localScale;
     }
 }
