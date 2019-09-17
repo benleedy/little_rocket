@@ -196,7 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e07bddbacd242c4fb0eda29c0f60eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPattern: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
+  asteroidPattern01: {fileID: 4221760653256256004, guid: 73c2ae59065396d408954c07f9d3da71,
+    type: 3}
+  asteroidPattern02: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
+    type: 3}
+  asteroidPattern03: {fileID: 4221760653256256004, guid: d0c5293857eee1d489972b428fd6d7cb,
     type: 3}
 --- !u!1 &418251916 stripped
 GameObject:
