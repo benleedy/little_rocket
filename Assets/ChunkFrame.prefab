@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2384956601372320578}
+  - component: {fileID: 408794900}
   m_Layer: 0
   m_Name: AsteroidFieldLoader
   m_TagString: Untagged
@@ -30,6 +31,31 @@ Transform:
   m_Father: {fileID: 2384956601757818131}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408794900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384956601372320577}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e07bddbacd242c4fb0eda29c0f60eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPattern00: {fileID: 0}
+  asteroidPattern01: {fileID: 4221760653256256004, guid: 71c1fa03e77ef794380ffc456fc80851,
+    type: 3}
+  asteroidPattern02: {fileID: 4221760653256256004, guid: 71c1fa03e77ef794380ffc456fc80851,
+    type: 3}
+  asteroidPattern03: {fileID: 4221760653256256004, guid: 71c1fa03e77ef794380ffc456fc80851,
+    type: 3}
+  asteroidPattern04: {fileID: 0}
+  asteroidPattern05: {fileID: 0}
+  asteroidPattern06: {fileID: 0}
+  asteroidPattern07: {fileID: 0}
+  asteroidPattern08: {fileID: 0}
+  asteroidPattern09: {fileID: 0}
 --- !u!1 &2384956601408638129
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,6 +65,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2384956601408638130}
+  - component: {fileID: 1438723451}
   m_Layer: 0
   m_Name: LeftWallLoader
   m_TagString: Untagged
@@ -60,6 +87,19 @@ Transform:
   m_Father: {fileID: 2384956601757818131}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438723451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384956601408638129}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5494e0dbc87f4469cb3b22468ff319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 1936706936456430568, guid: 822bd80a7b40b9c4cbbdc4f688d276c9, type: 3}
 --- !u!1 &2384956601550851420
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2384956601550851421}
+  - component: {fileID: 1648831638}
   m_Layer: 0
   m_Name: RightWallLoader
   m_TagString: Untagged
@@ -90,6 +131,19 @@ Transform:
   m_Father: {fileID: 2384956601757818131}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1648831638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384956601550851420}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5494e0dbc87f4469cb3b22468ff319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 1936706936456430568, guid: 822bd80a7b40b9c4cbbdc4f688d276c9, type: 3}
 --- !u!1 &2384956601757818129
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2384956601757818131}
-  - component: {fileID: 2384956601757818130}
+  - component: {fileID: 377713921}
   m_Layer: 0
   m_Name: ChunkFrame
   m_TagString: Untagged
@@ -125,7 +179,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2384956601757818130
+--- !u!114 &377713921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +191,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e07bddbacd242c4fb0eda29c0f60eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRocket: {fileID: 0}
+  asteroidPattern00: {fileID: 0}
+  asteroidPattern01: {fileID: 0}
+  asteroidPattern02: {fileID: 0}
+  asteroidPattern03: {fileID: 0}
+  asteroidPattern04: {fileID: 0}
+  asteroidPattern05: {fileID: 0}
+  asteroidPattern06: {fileID: 0}
+  asteroidPattern07: {fileID: 0}
+  asteroidPattern08: {fileID: 0}
+  asteroidPattern09: {fileID: 0}
 --- !u!1 &2384956602754125209
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +249,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2384956602754125209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -225,7 +288,7 @@ MeshCollider:
   m_GameObject: {fileID: 2384956602754125209}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14

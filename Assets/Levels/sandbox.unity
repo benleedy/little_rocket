@@ -178,30 +178,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a03f6864255921a4fa80eb32e65fc3fb, type: 3}
---- !u!1 &408794898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2384956601372320577, guid: cd35fa4cd042bae458dd8bd598766305,
-    type: 3}
-  m_PrefabInstance: {fileID: 2384956602125803976}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &408794900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408794898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e07bddbacd242c4fb0eda29c0f60eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidPattern01: {fileID: 4221760653256256004, guid: 73c2ae59065396d408954c07f9d3da71,
-    type: 3}
-  asteroidPattern02: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
-    type: 3}
-  asteroidPattern03: {fileID: 4221760653256256004, guid: d0c5293857eee1d489972b428fd6d7cb,
-    type: 3}
 --- !u!1 &418251916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7211056464777452235, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
@@ -442,25 +418,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 01338adcd63431e4995b638affc5279f, type: 3}
---- !u!1 &1438723449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2384956601408638129, guid: cd35fa4cd042bae458dd8bd598766305,
-    type: 3}
-  m_PrefabInstance: {fileID: 2384956602125803976}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1438723451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438723449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e5494e0dbc87f4469cb3b22468ff319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1936706936456430568, guid: 822bd80a7b40b9c4cbbdc4f688d276c9, type: 3}
 --- !u!1 &1441775694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7211056465407428054, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
@@ -521,25 +478,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!1 &1648831636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2384956601550851420, guid: cd35fa4cd042bae458dd8bd598766305,
-    type: 3}
-  m_PrefabInstance: {fileID: 2384956602125803976}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1648831638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648831636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e5494e0dbc87f4469cb3b22468ff319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1936706936456430568, guid: 822bd80a7b40b9c4cbbdc4f688d276c9, type: 3}
 --- !u!1 &1685107329 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7211056464315467845, guid: 5dc8bff2dd2534f44b47aa6a9dc83d4d,
@@ -680,35 +618,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2384956601757818130, guid: cd35fa4cd042bae458dd8bd598766305,
-        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
       propertyPath: playerRocket
       value: 
       objectReference: {fileID: 829492143}
-    - target: {fileID: 2384956601757818130, guid: cd35fa4cd042bae458dd8bd598766305,
-        type: 3}
-      propertyPath: wall
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: landingZone
       value: 
-      objectReference: {fileID: 1936706936456430568, guid: 822bd80a7b40b9c4cbbdc4f688d276c9,
+      objectReference: {fileID: 4221760653256256004, guid: 71c1fa03e77ef794380ffc456fc80851,
         type: 3}
-    - target: {fileID: 2384956601757818130, guid: cd35fa4cd042bae458dd8bd598766305,
-        type: 3}
-      propertyPath: asteroidPattern
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern00
       value: 
-      objectReference: {fileID: 29481281365936440, guid: 1599316bf57a3ad479437b8590a00af2,
+      objectReference: {fileID: 4221760653256256004, guid: 73c2ae59065396d408954c07f9d3da71,
         type: 3}
-    - target: {fileID: 2384956602754125212, guid: cd35fa4cd042bae458dd8bd598766305,
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern01
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384956602754125211, guid: cd35fa4cd042bae458dd8bd598766305,
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern02
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: d0c5293857eee1d489972b428fd6d7cb,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2384956601757818130, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern03
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 96df2542cc649cc4f84089eb48b6e8af,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern04
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern05
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 73c2ae59065396d408954c07f9d3da71,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern06
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 96df2542cc649cc4f84089eb48b6e8af,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern07
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: d0c5293857eee1d489972b428fd6d7cb,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern08
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 6618a4004c078d249ad510cdfdf5d17b,
+        type: 3}
+    - target: {fileID: 377713921, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
+      propertyPath: asteroidPattern09
+      value: 
+      objectReference: {fileID: 4221760653256256004, guid: 73c2ae59065396d408954c07f9d3da71,
+        type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd35fa4cd042bae458dd8bd598766305, type: 3}
 --- !u!1001 &5423999168506803300
 PrefabInstance:

@@ -5,7 +5,8 @@ using UnityEngine;
 public class FieldLoader : MonoBehaviour
 {
     [SerializeField] GameObject playerRocket;
-    float loadLine = 60f;
+    float loadLine = 0f;
+    float chunkLoadCenter = 60f;
 
     [SerializeField] GameObject landingZone;
     [SerializeField] GameObject asteroidPattern00;
@@ -35,29 +36,44 @@ public class FieldLoader : MonoBehaviour
         fields[8] = asteroidPattern08;
         fields[9] = asteroidPattern09;
 
-        
+        LoadFields();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //when the player lands on a checkpoint, trigger loading the next chunk
-        if (layerRocket.landed == true)
+        if (playerRocket.transform.position.y > loadLine)
         {
+            LoadFields();
 
-        for (int i = 0; i < 4; i++)
-            {
-                if (i == 2)
-                {
-                    Instantiate(landingZone, transform.position, transform.rotation);
-                }
-                else
-                {
 
-                LoadAsteroids(i);
-                }
-            }
         }
+    }
+
+    void LoadFields()
+    {
+
+            for (int i = 0; i < 4; i++)
+                {
+                    if (i == 2)
+                    {
+                        Instantiate(landingZone, transform.position, transform.rotation);
+                        chunkLoadCenter += 60f;
+                    transform.position = new Vector3(0f, chunkLoadCenter, 0f);
+                    }
+                    else
+                    {
+
+                    LoadAsteroids(i);
+                        chunkLoadCenter += 60f;
+                    transform.position = new Vector3(0f, chunkLoadCenter, 0f);
+                }
+                }
+
+            loadLine += 180f;
     }
 
     void LoadAsteroids(int pattern)
