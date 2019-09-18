@@ -26,6 +26,7 @@ public class AsteroidSpawner : MonoBehaviour
     {
         //asteroidScale = transform.localScale;
         var newAsteroid = Instantiate(asteroid, transform.position, transform.rotation);
+        newAsteroid.transform.localScale = new Vector3(1f, 1f, 1f);
         newAsteroid.transform.parent = gameObject.transform;
         //var newAsteroid = Instantiate(asteroid, transform.position, transform.rotation);
         //asteroid.transform.localScale = transform.localScale * 5f;
