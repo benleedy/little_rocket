@@ -25,9 +25,16 @@ public class SegmentLoaderControl : MonoBehaviour
 {
     [SerializeField] GameObject playerRocket;
 
+    // the zero point of this segment, from which all measurements will be determined
+    
+    // a list of all potential grid points
     // Start is called before the first frame update
     void Start()
     {
+
+        Vector3 segmentIndex = transform.position - new Vector3(-30f, 0f, 0f);
+        print(segmentIndex);
+
         
     }
 
