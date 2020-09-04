@@ -21,8 +21,8 @@ public class UnChilder : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                print(curPos);
-                print(lastPos);
+                //print(curPos);
+               // print(lastPos);
                 child.parent = null;
             }
         }

@@ -13,7 +13,7 @@ public class ObstacleRotator : MonoBehaviour
     void Start()
     {
         rotationSpeed = Random.RandomRange(-20f, 20f);
-        print(rotationSpeed);
+        //print(rotationSpeed);
 
     }
 

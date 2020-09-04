@@ -142,10 +142,6 @@ public class Rocket : MonoBehaviour
         {
             ApplyThrust();
         }
-        else if (CrossPlatformInputManager.GetAxis("Fire1") > 0)
-        {
-            ApplyThrust();
-        }
         else
         {
             audioSource.Stop();
@@ -153,7 +149,7 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    private void ApplyThrust()
+    public void ApplyThrust()
     {
         rigidBody.AddRelativeForce(Vector3.up * engineThrust * Time.deltaTime);
 
