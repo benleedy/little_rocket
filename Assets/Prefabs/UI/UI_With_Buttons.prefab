@@ -501,7 +501,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right
+  m_Text: 'Spawn
+
+    Survivor'
 --- !u!1 &6168538730060715370
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
     public void IncreaseScore(int points)
     {
         score += points;
-        Debug.Log("Current points: " + points);
         playerScore.text = score.ToString();
     }
 }
