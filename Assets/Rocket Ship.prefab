@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7618096131491513663}
   - component: {fileID: 46426521024558849}
   - component: {fileID: 7618096131491513664}
+  - component: {fileID: 2546306271717986337}
+  - component: {fileID: 5032354499237004032}
   m_Layer: 0
   m_Name: Rocket Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,10 +52,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7618096131491513662}
   serializedVersion: 2
-  m_Mass: 0.05
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
@@ -166,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2688cd0ee4c80cc47b6166e8ef56c922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 200
-  engineThrust: 150
+  rcsThrust: 150
+  engineThrust: 100
   levelLoadDelay: 2
   mainEngine: {fileID: 8300000, guid: b68f3463819565d41bd44eed1423e178, type: 3}
   death: {fileID: 8300000, guid: 31520e91b40f9b54e8f0d291ba67773d, type: 3}
@@ -175,6 +177,32 @@ MonoBehaviour:
   mainEngineParticles: {fileID: 7069529736686658854}
   deathParticles: {fileID: 900549247536328059}
   successParticles: {fileID: 8583037634110071427}
+--- !u!114 &2546306271717986337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618096131491513662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ac589dc2bee8345bf4dabf6580a51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &5032354499237004032
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618096131491513662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!1001 &1062654822889022395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -251,11 +279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Name
-      value: Starboard Booster
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
     - target: {fileID: 6792397009073193539, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,11 +344,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
+      propertyPath: m_Name
+      value: Starboard Booster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5730c23f9dd4e4b965c19003a0efeb, type: 3}
 --- !u!4 &5174605597883746919 stripped
@@ -336,11 +364,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Name
-      value: Starboard Booster (1)
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
     - target: {fileID: 6792397009073193539, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,11 +429,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
+      propertyPath: m_Name
+      value: Starboard Booster (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5730c23f9dd4e4b965c19003a0efeb, type: 3}
 --- !u!4 &8626161020762780640 stripped
@@ -421,11 +449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Name
-      value: Starboard Booster (2)
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
     - target: {fileID: 6792397009073193539, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -486,11 +514,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
+      propertyPath: m_Name
+      value: Starboard Booster (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5730c23f9dd4e4b965c19003a0efeb, type: 3}
 --- !u!4 &1028063688129223111 stripped
@@ -506,11 +534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 6139421591547788085, guid: bc61f664db14b444db56894b326d0e92,
-        type: 3}
-      propertyPath: m_Name
-      value: Nose Cone
-      objectReference: {fileID: 0}
     - target: {fileID: 6139421591547788084, guid: bc61f664db14b444db56894b326d0e92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,6 +589,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6139421591547788085, guid: bc61f664db14b444db56894b326d0e92,
+        type: 3}
+      propertyPath: m_Name
+      value: Nose Cone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc61f664db14b444db56894b326d0e92, type: 3}
 --- !u!4 &1130573651 stripped
@@ -581,11 +609,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 1558406771386664050, guid: 920362e9c7dbc9f4da94839d8e66aca9,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket Body
-      objectReference: {fileID: 0}
     - target: {fileID: 598192297981044185, guid: 920362e9c7dbc9f4da94839d8e66aca9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,6 +668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.4292278
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558406771386664050, guid: 920362e9c7dbc9f4da94839d8e66aca9,
+        type: 3}
+      propertyPath: m_Name
+      value: Rocket Body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920362e9c7dbc9f4da94839d8e66aca9, type: 3}
@@ -730,11 +758,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4126996473970701618}
     m_Modifications:
-    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Name
-      value: Starboard Booster (3)
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
     - target: {fileID: 6792397009073193539, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -795,11 +823,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3573271408097000876, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
+    - target: {fileID: 7475329231863155273, guid: 1e5730c23f9dd4e4b965c19003a0efeb,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e25fff330d937b45b57f3a58d163454, type: 2}
+      propertyPath: m_Name
+      value: Starboard Booster (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5730c23f9dd4e4b965c19003a0efeb, type: 3}
 --- !u!4 &3846933012241141894 stripped
