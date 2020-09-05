@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 // Tracks game progress, score
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI playerScore;
     int score = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScore.text = score.ToString();
     }
 
     // Update is called once per frame
@@ -28,5 +31,6 @@ public class Player : MonoBehaviour
     {
         score += points;
         Debug.Log("Current points: " + points);
+        playerScore.text = score.ToString();
     }
 }
