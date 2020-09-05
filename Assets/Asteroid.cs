@@ -9,7 +9,7 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        gameObject.transform.SetParent(FindObjectOfType<AsteroidField>().gameObject.transform);
     }
 
     // Update is called once per frame
