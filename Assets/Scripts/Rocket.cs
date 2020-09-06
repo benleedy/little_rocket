@@ -157,7 +157,8 @@ public class Rocket : MonoBehaviour
 
         if (!audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(mainEngine);
+            //Debug.Log("Playing thrust!");
+            audioSource.PlayOneShot(mainEngine, 1);
         }
 
         mainEngineParticles.Play();
@@ -183,8 +184,8 @@ public class Rocket : MonoBehaviour
         }
         else
         {
-            audioSource.Stop();
-            mainEngineParticles.Stop();
+            //audioSource.Stop();
+            //mainEngineParticles.Stop();
         }
     }
 
@@ -208,12 +209,12 @@ public class Rocket : MonoBehaviour
         }
 
 
-        if (!audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(mainEngine);
-        }
+        //if (!audioSource.isPlaying)
+        //{
+        //    audioSource.PlayOneShot(mainEngine);
+        //}
 
-        mainEngineParticles.Play();
+        //mainEngineParticles.Play();
     }
 
     private void RespondToRotateInput()

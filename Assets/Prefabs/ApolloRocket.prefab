@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5768992486269293131}
   - component: {fileID: 7163026132551904719}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573192957506690180}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000004768371, w: 1}
-  m_LocalPosition: {x: 4.1616, y: -6.4672, z: 0}
+  m_LocalPosition: {x: 3.62, y: -6.47, z: 0}
   m_LocalScale: {x: 0.3624089, y: 0.27112716, z: 0.3624089}
   m_Children: []
   m_Father: {fileID: 2871613330965901136}
@@ -2913,8 +2913,9 @@ GameObject:
   - component: {fileID: 9080232903962817662}
   - component: {fileID: 6207999320889772507}
   - component: {fileID: 5357926017934661602}
+  - component: {fileID: 6235375720712568202}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2928,7 +2929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658207843382438220}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000004768371, w: 1}
-  m_LocalPosition: {x: 0.507752, y: 4.2526, z: 0}
+  m_LocalPosition: {x: 0, y: 4.2526, z: 0}
   m_LocalScale: {x: 1.8094981, y: 0.5722538, z: 1.8094981}
   m_Children: []
   m_Father: {fileID: 2871613330965901136}
@@ -5832,6 +5833,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!54 &6235375720712568202
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658207843382438220}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1887344384484600310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,7 +5897,7 @@ GameObject:
   - component: {fileID: 8292451847609242202}
   - component: {fileID: 6673085449416817161}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5894,7 +5911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4210876000628567950}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000004768371, w: 1}
-  m_LocalPosition: {x: 4.1616, y: -11.1, z: 0}
+  m_LocalPosition: {x: 3.61, y: -11.1, z: 0}
   m_LocalScale: {x: 0.3624089, y: 0.15759265, z: 0.3624089}
   m_Children: []
   m_Father: {fileID: 2871613330965901136}
