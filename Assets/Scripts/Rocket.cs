@@ -15,8 +15,9 @@ public class Rocket : MonoBehaviour
     bool ignoreCollisions = false;
     int currentSceneIndex;
 
-    [SerializeField] float rcsThrust = 100f;
-    [SerializeField] float engineThrust = 1f;
+    [SerializeField] float rcsRotation = 150f;
+    [SerializeField] float rcsTranslation = 25f;
+    [SerializeField] float engineThrust = 100f;
     [SerializeField] float levelLoadDelay = 2f;
 
     [SerializeField] AudioClip mainEngine;
@@ -46,6 +47,7 @@ public class Rocket : MonoBehaviour
         {
             RespondToRotateInput();
             RespondToThrustInput();
+            RespondToTranslationInput();
         }
         if (Debug.isDebugBuild)
         {
@@ -138,10 +140,6 @@ public class Rocket : MonoBehaviour
         {
             ApplyThrust();
         }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            ApplyThrust();
-        }
         else
         {
             audioSource.Stop();
@@ -161,12 +159,65 @@ public class Rocket : MonoBehaviour
         mainEngineParticles.Play();
     }
 
+    void RespondToTranslationInput()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            ApplyTranslation(1);
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            ApplyTranslation(2);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            ApplyTranslation(3);
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            ApplyTranslation(4);
+        }
+        else
+        {
+            audioSource.Stop();
+            mainEngineParticles.Stop();
+        }
+    }
+
+    public void ApplyTranslation(int Direction) // 1 forward, 2 right, 3 back, 4 left
+    {
+        if (Direction == 1)
+        {
+            rigidBody.AddRelativeForce(Vector3.up * rcsTranslation * Time.deltaTime);
+        }
+        if (Direction == 2)
+        {
+            rigidBody.AddRelativeForce(Vector3.right * rcsTranslation * Time.deltaTime);
+        }
+        if (Direction == 3)
+        {
+            rigidBody.AddRelativeForce(Vector3.down * rcsTranslation * Time.deltaTime);
+        }
+        if (Direction == 4)
+        {
+            rigidBody.AddRelativeForce(Vector3.left * rcsTranslation * Time.deltaTime);
+        }
+
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+
+        mainEngineParticles.Play();
+    }
+
     private void RespondToRotateInput()
     {
 
         float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
 
-        float rotationThisFrame = -xThrow * Time.deltaTime * rcsThrust;
+        float rotationThisFrame = -xThrow * Time.deltaTime * rcsRotation;
 
         if (xThrow != 0)
         {

@@ -7,6 +7,7 @@ public class FolloowCamZeroG : MonoBehaviour
     [SerializeField] Transform playerRocketTransform;
     //float cameraDistance = 9;
     [SerializeField] Vector3 cameraPosition;
+    [SerializeField] float cameraDistance = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class FolloowCamZeroG : MonoBehaviour
         //}
         //else
         //{
-            transform.position = new Vector3(playerRocketTransform.position.x, playerRocketTransform.position.y, -82f);
+            transform.position = new Vector3(playerRocketTransform.position.x, playerRocketTransform.position.y, -cameraDistance);
         //}
 
         /*
