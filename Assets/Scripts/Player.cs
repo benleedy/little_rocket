@@ -8,7 +8,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI playerScore;
+    [SerializeField] TextMeshProUGUI playerSpeed;
     int score = 0;
+    float speed = 0f;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        playerSpeed.text = speed.ToString("0.0");
     }
 
     public int GetScore()
@@ -31,5 +34,10 @@ public class Player : MonoBehaviour
     {
         score += points;
         playerScore.text = score.ToString();
+    }
+
+    public float GetPlayerVelocity()
+    {
+        return speed;
     }
 }
