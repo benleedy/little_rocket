@@ -8,6 +8,7 @@ TagManager:
   - Unfriendly
   - Fuel
   - Checkpoint
+  - DockingPort
   layers:
   - Default
   - TransparentFX

@@ -75,11 +75,15 @@ public class Rocket : MonoBehaviour
                     break;
                 case "Finish":
                     StartSuccessSequence();
-                    StabilizeRocket(collision.gameObject.transform);
+                    StabilizeRocket(collision.gameObject.transform, new Vector3(0f, 0f, 0f));
                     break;
                 case "Checkpoint":
                     //stand the rocket upright
-                    StabilizeRocket(collision.gameObject.transform);
+                    StabilizeRocket(collision.gameObject.transform, new Vector3(0f, 0f, 0f));
+                    break;
+                case "DockingPort":
+                    //stand the rocket upright
+                    StabilizeRocket(collision.gameObject.transform, new Vector3(0f, 0f, 180f));
                     break;
                 default:
                     StartDeathSequence();
@@ -90,11 +94,11 @@ public class Rocket : MonoBehaviour
     }
 
     
-    void StabilizeRocket(Transform pad)
+    void StabilizeRocket(Transform pad, Vector3 orientation)
     {
         rigidBody.freezeRotation = true;  // take manual control of rotation
         //transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 3.65), pad.transform.position.z), Quaternion.Euler(new Vector3(0, 0, 0)));
-        transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 1.65f), pad.transform.position.z), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        transform.SetPositionAndRotation(new Vector3(pad.transform.position.x, (pad.transform.position.y + 1.65f), pad.transform.position.z), Quaternion.Euler(orientation));
         rigidBody.freezeRotation = false;  // take manual control of rotation
         rigidBody.velocity = new Vector3(0f,0f,0f);
         
