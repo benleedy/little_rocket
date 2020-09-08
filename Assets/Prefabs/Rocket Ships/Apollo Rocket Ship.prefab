@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 46426521024558849}
   - component: {fileID: 7618096131491513664}
   - component: {fileID: 2546306271717986337}
-  - component: {fileID: 4712883366478422629}
   m_Layer: 0
   m_Name: Apollo Rocket Ship
   m_TagString: Player
@@ -187,20 +186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: {fileID: 0}
   playerSpeed: {fileID: 0}
---- !u!136 &4712883366478422629
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7618096131491513662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 3.6154
-  m_Height: 18.257956
-  m_Direction: 1
-  m_Center: {x: 0, y: -1.9947462, z: 0}
 --- !u!1001 &230624559866204672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,15 +198,30 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1423212197192443692, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1573192957506690180, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
+    - target: {fileID: 1573192957506690180, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1658207843382438220, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_Name
       value: Cone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658207843382438220, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1817264518229670865, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
@@ -303,15 +303,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Engine
       objectReference: {fileID: 0}
+    - target: {fileID: 4210876000628567950, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4662594523876564568, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.61
+      value: 2.068
       objectReference: {fileID: 0}
     - target: {fileID: 4662594523876564568, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.47
+      value: -4.51
       objectReference: {fileID: 0}
     - target: {fileID: 5357926017934661602, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
@@ -323,6 +328,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5658812804655725103, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6673085449416817161, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_Mesh
@@ -332,6 +342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695829856028647346, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7163026132551904719, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
@@ -346,7 +361,17 @@ PrefabInstance:
     - target: {fileID: 7663053976468804648, guid: a9def542647314a4b88b3bb5363a5d03,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.72
+      value: 2.1000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663053976468804648, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729453707896540432, guid: a9def542647314a4b88b3bb5363a5d03,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9def542647314a4b88b3bb5363a5d03, type: 3}

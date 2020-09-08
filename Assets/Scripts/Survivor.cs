@@ -67,7 +67,7 @@ public class Survivor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Player>().IncreaseScore(points);
+            other.GetComponentInParent<Player>().IncreaseScore(points);
             Destroy(gameObject);
         }
     }
