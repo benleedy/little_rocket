@@ -43,9 +43,9 @@ void Start()
         //make five attempts to place asteroids randomly at scale 1 with 1 space of buffer
         for (int i = 0; i < 1000; i++)
         {
-            int size = Random.Range(1, 5);
-            Vector2Int location = new Vector2Int(Random.Range(-1000, 1000), Random.Range(-1000, 1000));
-            if (Physics.OverlapSphere(new Vector3Int(location.x, location.y, 0), 5f + size).Length == 0)
+            int size = Random.Range(10, 20);
+            Vector2Int location = new Vector2Int(Random.Range(-100, 100), Random.Range(-1000, 1000));
+            if (Physics.OverlapSphere(new Vector3Int(location.x, location.y, 0), 15f + size).Length == 0)
             {
                 var newAsteroid = Instantiate(asteroid, new Vector3Int(location.x, location.y, 0), Quaternion.Euler(0, 0, 0), asteroidField.transform);
                 newAsteroid.transform.localScale = new Vector3(size, size, size);

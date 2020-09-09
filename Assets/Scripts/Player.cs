@@ -15,14 +15,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerScore.text = score.ToString();
+        playerScore.text = "Score: " + score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
-        playerSpeed.text = speed.ToString("0.0");
+        playerSpeed.text = "Speed: " + speed.ToString("0.0") + "m/s";
     }
 
     public int GetScore()

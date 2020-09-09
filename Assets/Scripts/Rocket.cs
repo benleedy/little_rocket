@@ -55,6 +55,11 @@ public class Rocket : MonoBehaviour
             DebugOptions();
         }
 
+        if (gameObject.transform.position.x > 100 || gameObject.transform.position.x < -100)
+        {
+            StartDeathSequence();
+        }
+
         //If I want a speed limit, this is how I would implement it.
         /*
         rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, MaxVelocity);

@@ -1,43 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class FieldLoader : MonoBehaviour
 {
+    [SerializeField] int seed = 820508;
     [SerializeField] GameObject playerRocket;
     float loadLine = 0f;
     float chunkLoadCenter = 60f;
 
-    [SerializeField] GameObject landingZone;
-    [SerializeField] GameObject asteroidPattern00;
-    [SerializeField] GameObject asteroidPattern01;
-    [SerializeField] GameObject asteroidPattern02;
-    [SerializeField] GameObject asteroidPattern03;
-    [SerializeField] GameObject asteroidPattern04;
-    [SerializeField] GameObject asteroidPattern05;
-    [SerializeField] GameObject asteroidPattern06;
-    [SerializeField] GameObject asteroidPattern07;
-    [SerializeField] GameObject asteroidPattern08;
-    [SerializeField] GameObject asteroidPattern09;
+    //[SerializeField] GameObject landingZone;
+    //[SerializeField] GameObject asteroidWalls;
+    [SerializeField] int minSize = 5;
+    [SerializeField] int maxSize = 40;
+    [SerializeField] GameObject asteroid00;
+    [SerializeField] GameObject asteroid01;
+    [SerializeField] GameObject asteroid02;
+    [SerializeField] GameObject asteroid03;
+    [SerializeField] GameObject asteroid04;
 
-    GameObject[] fields = new GameObject[10];
+
+    GameObject[] asteroids = new GameObject[5];
+
+    int score = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        fields[0] = asteroidPattern00;
-        fields[1] = asteroidPattern01;
-        fields[2] = asteroidPattern02;
-        fields[3] = asteroidPattern03;
-        fields[4] = asteroidPattern04;
-        fields[5] = asteroidPattern05;
-        fields[6] = asteroidPattern06;
-        fields[7] = asteroidPattern07;
-        fields[8] = asteroidPattern08;
-        fields[9] = asteroidPattern09;
+        Random.InitState(seed);
 
+        asteroids[0] = asteroid00;
+        asteroids[1] = asteroid01;
+        asteroids[2] = asteroid02;
+        asteroids[3] = asteroid03;
+        asteroids[4] = asteroid04;
+        
         LoadFields();
-
 
     }
 
@@ -48,36 +48,43 @@ public class FieldLoader : MonoBehaviour
         if (playerRocket.transform.position.y > loadLine)
         {
             LoadFields();
-
-
+        }
+        score = FindObjectOfType<Player>().GetScore();
+        int playerAltitude = (int)playerRocket.transform.position.y;
+        if (score < playerAltitude)
+        {
+            FindObjectOfType<Player>().IncreaseScore(playerAltitude - score);
         }
     }
 
     void LoadFields()
     {
-
             for (int i = 0; i < 4; i++)
                 {
-                    if (i == 2)
-                    {
-                        Instantiate(landingZone, transform.position, transform.rotation);
-                        chunkLoadCenter += 60f;
-                    transform.position = new Vector3(0f, chunkLoadCenter, 0f);
-                    }
-                    else
-                    {
-
-                    LoadAsteroids(i);
-                        chunkLoadCenter += 60f;
+                    LoadAsteroids();
+                    chunkLoadCenter += 100f;
                     transform.position = new Vector3(0f, chunkLoadCenter, 0f);
                 }
-                }
 
-            loadLine += 180f;
+            loadLine += 400f;
     }
 
-    void LoadAsteroids(int pattern)
+    void LoadAsteroids()
     {
-        Instantiate(fields[pattern], transform.position, transform.rotation);
+        //Instantiate(asteroidWalls, transform.position, transform.rotation);
+
+        Vector2Int center = new Vector2Int((int) transform.position.x, (int) transform.position.y);
+
+        for (int i = 0; i < 100; i++)
+        {
+            int randomAsteroid = Random.Range(0, asteroids.Length);
+            int size = Random.Range(minSize, maxSize);
+            Vector2Int location = center + new Vector2Int(Random.Range(-95, 95), Random.Range(-100, 100));
+            if (Physics.OverlapSphere(new Vector3Int(location.x, location.y, 0), 10f + size).Length == 0)
+            {
+                var newAsteroid = Instantiate(asteroids[randomAsteroid], new Vector3Int(location.x, location.y, 0), Quaternion.Euler(0, 0, 0));
+                newAsteroid.transform.localScale = new Vector3(size, size, size);
+            }
+        }
     }
 }
