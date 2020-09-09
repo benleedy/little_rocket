@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Rocket : MonoBehaviour
@@ -28,13 +30,19 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem successParticles;
 
+    [SerializeField] Canvas mainUI;
+    [SerializeField] Canvas deathMenu;
+    [SerializeField] TextMeshProUGUI finalScore;
+
     //[SerializeField] float fuelLevel = 1; // This will be used when fuel is re-instituted
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         
+        deathMenu.enabled = false;
+        Time.timeScale = 1f;
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
@@ -125,7 +133,9 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(death);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", levelLoadDelay);
+        ShowDeathMenu();
+        Time.timeScale = .5f;
+        //Invoke("ShowDeathMenu", levelLoadDelay);
     }
 
     private void LoadNextLevel()
@@ -138,8 +148,17 @@ public class Rocket : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     }
 
-    private void LoadFirstLevel()
+    private void ShowDeathMenu()
     {
+        mainUI.enabled = false;
+        deathMenu.enabled = true;
+        finalScore.text = "Score: " + GetComponent<Player>().GetScore();
+    }
+
+    public void LoadFirstLevel()
+    {
+        mainUI.enabled = true;
+        deathMenu.enabled = false;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
